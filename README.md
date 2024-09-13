@@ -3,9 +3,11 @@
 Here I will track my progress doing Replit's 100 Days Of Code Challenge
 
 # Table of Content
-- [Day 1](#day-1)
-- [Day 2](#day-2)
-- [Day 3](#day-3)
+- [Day 1](#day-1)    |  [Day 6](#day-6)
+- [Day 2](#day-2)    |  [Day 7](#day-7)
+- [Day 3](#day-3)    |  [Day 8](#day-8)
+- [Day 4](#day-4)    |  [Day 9](#day-9)
+- [Day 5](#day-5)    |  [Day 10](#day-10)
 
 ## Description
 
@@ -213,3 +215,135 @@ while try_again != "no":
   print("\nThank you for using the Ultimate Wacky Recipe Maker! \nBye bye!")
 ```
 
+## Day 4
+
+## Description
+
+### 👉 Day 4 Challenge: Everyone loves a good story!
+
+Well, you're going to create your own adventure story that places your user in the role of the main character and we'll even customize the story to suit their interests.
+
+Your task
+
+- Ask your users to list a bunch of information about them: things they like, things they hate, names of family and friends... it's up to you how many and what kinds of things you pick. Keep it wacky!
+
+-  Now construct your story - it can be about anything you want, but must use the variables you've created in step 1.
+
+-  Make sure to only work one paragraph at a time. Otherwise things could get a bit messy.
+
+Sneaky Extra Skill
+
+You can jazz things up even more by changing the color of the text. Wow. We're quickly approaching the quality of output of a computer from 1981! 😬
+
+How does it work?
+
+It's all just print statements, but using special codes that tell your console to start printing everything after this point in the new color.
+You will need to reset if you want to go back and change it in previous lessons.
+
+| Color    | Value    |
+| -------- | -------- |
+| Default  | 	      0 |
+| Black    |	     30 | 
+| Red	     |       31 |
+| Green	   |       32 |
+| Yellow   |       33 |
+| Blue     |	     34 |
+| Purple   |	     35 |
+| Cyan     |	     36 |
+| White	   |       37 |
+
+### Code
+
+```
+
+# This is a simple program that will create a story based on user input. 
+
+# Intro
+
+print("""Welcome to your adventure simulator. I am going to ask you a bunch of questions
+and then create an epic story with you as the star!\n""")
+
+# Variables
+
+name = input("What is your \033[34mname\033[0m? ")
+age = input("How \033[32mold\033[0m are you? ")
+food = input("What is your favorite \033[33mfood\033[0m? ")
+color = input("What is your favorite \033[31mc\033[32mo\033[33ml\033[34mo\033[35mr\033[0m? ")
+animal = input("What is your favorite \033[36manimal\033[0m? ")
+num_family = input("How many people are in your \033[35mfamily\033[0m? ")
+gear_grinder = input("What is something you \033[31mdislike\033[0m? ")
+super_power = input("If you could have a \033[40msuper power\033[0m, what would it be? ")
+
+# Here I realized that I wanted the value for the color variable to match the color of 
+# the text in the input query. Therefore, I had to think of a way to add color to the 
+# string for each character. I chose to use a for loop to iterate through the string and 
+# add the color to each character.
+
+
+asci_code = 31
+color_coded = ""
+
+for char in color:
+  color_coded += f"\033[{asci_code}m{char}\033[0m"
+  asci_code += 1
+
+# Story
+
+print(f"""\nHello \033[34m{name}\033[0m!
+
+After \033[32m{age}\033[0m years of age you discovered that you have the power of 
+\033[40m{super_power}\033[0m. You travel the globe saving \033[36m{animal}\033[0m from \033[31m{gear_grinder}\033[0m. 
+But in your spare time you and your \033[35m{num_family}\033[0m family members rent out a 
+{color_coded}\033[0m beach house and run a stand selling \033[33m{food}\033[0m.""")
+
+```
+
+#### Added a while loop for repeatablity
+
+```
+# This is a simple program that will create a story based on user input. 
+
+# Intro
+
+try_again = "yes"
+while try_again == "yes":
+  print("""Welcome to your adventure simulator. I am going to ask you a bunch of questions
+and then create an epic story with you as the star!\n""")
+
+# Variables
+
+  name = input("What is your \033[34mname\033[0m? ")
+  age = input("How \033[32mold\033[0m are you? ")
+  food = input("What is your favorite \033[33mfood\033[0m? ")
+  color = input("What is your favorite \033[31mc\033[32mo\033[33ml\033[34mo\033[35mr\033[0m? ")
+  animal = input("What is your favorite \033[36manimal\033[0m? ")
+  num_family = input("How many people are in your \033[35mfamily\033[0m? ")
+  gear_grinder = input("What is something you \033[31mdislike\033[0m? ")
+  super_power = input("If you could have a \033[40msuper power\033[0m, what would it be? ")
+
+# Here I realized that I wanted the value for the color variable to match the color of 
+# the text in the input query. Therefore, I had to think of a way to add color to the 
+# string for each character. I chose to use a for loop to iterate through the string and 
+# add the color to each character.
+
+
+  asci_code = 31
+  color_coded = ""
+
+  for char in color:
+    color_coded += f"\033[{asci_code}m{char}\033[0m"
+    asci_code += 1
+
+# Story
+
+  print(f"""\nHello \033[34m{name}\033[0m!
+
+After \033[32m{age}\033[0m years of age you discovered that you have the power of 
+\033[40m{super_power}\033[0m. You travel the globe saving \033[36m{animal}\033[0m from \033[31m{gear_grinder}\033[0m. 
+But in your spare time you and your \033[35m{num_family}\033[0m family members rent out a 
+{color_coded}\033[0m beach house and run a stand selling \033[33m{food}\033[0m.""")
+
+  print("\nHow did you like that one? Think you might like to try again?")  
+  try_again = input("\nYes? No? ")
+print("\nAlright, thanks for playing!")
+```
