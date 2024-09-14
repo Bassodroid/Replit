@@ -347,3 +347,115 @@ But in your spare time you and your \033[35m{num_family}\033[0m family members r
   try_again = input("\nYes? No? ")
 print("\nAlright, thanks for playing!")
 ```
+
+## Day 5
+
+## Description
+
+### 👉 Day 5 Challenge: "Which character are you?" Generator
+
+You will need to:
+
+- Ask your users a series of questions that identify if they're one of the characters in the world you have created.
+
+- Add multiple if statements to check the result of each question.
+
+- Make sure to have a final print if they haven't selected any of the characters so far.
+
+## Code
+
+```
+
+# Which Character Are You Generator?
+
+# This will be loosely based on the characters from George RR Martin's "A Song of Ice and Fire."
+
+# Character Variables
+ned_stark = 'Ned Stark'
+arya_stark = 'Arya Stark'
+sansa_stark = 'Sansa Stark'
+jon_snow = 'Jon Snow'
+daenerys_targaryen = 'Daenerys Targaryen'
+tyrion_lannister = 'Tyrion Lannister'
+littlefinger = 'Littlefinger'
+the_hound = 'The Hound'
+
+# Intro
+print('Game of Thrones Character Generator')
+print('------------------------------------')
+print('Answer the following questions to find out which character you are!')
+print('------------------------------------')
+print('Please answer the following questions using either Yes or No.')
+print('------------------------------------')
+
+start = input("Alright, here's your first one, are you ready? ")
+
+while start == 'Yes':
+    ambitious = input('Do you have a desire for power and influence? Are you constantly seeking to advance? ')
+    if ambitious == 'Yes':
+        calculating = input('Do you like to play chess? Do you think plans through several steps ahead? ')
+        if calculating == 'Yes':
+            ruthless = input('Are you determined to meet your goals no matter the cost? ')
+            if ruthless == 'Yes':
+                print('You are ' + littlefinger + '!')
+            else:
+                print('You are ' + tyrion_lannister + '!')
+        else:
+            curious = input('Do you like adventure and exploration? Do you like to learn new things? ')
+            if curious == 'Yes':
+                honorable = input('Do you believe in honor and duty? ')
+                if honorable == 'Yes':
+                    loyal = input('Do you always try to keep your promises? ')
+                    if loyal == 'Yes':
+                        print('You are ' + jon_snow + '!')
+                    else:
+                        print('You are ' + tyrion_lannister + '!')
+                else:
+                    print('You are ' + daenerys_targaryen  + '!')
+            else:
+                print('You are ' + arya_stark + '!')
+    else:
+        curious = input('Do you like adventure and exploration? Do you like to learn new things? ')
+        if curious == 'Yes':
+            rebellious = input('Do you tread out on your own path? Or do you often seek out a group? ')
+            if rebellious == 'Yes':
+                protective = input('Do you often want to protect your friends and family? ')
+                if protective == 'Yes':
+                    print('You are ' + arya_stark + '!')
+                else:
+                    print('You are ' + sansa_stark+ '!')
+            else:
+                reserved = input('Do you tend to keep to yourself? ')
+                if reserved == 'Yes':
+                    honorable = input('Do you believe in honor and duty? ')
+                    if honorable == 'Yes':
+                        print('You are ' + ned_stark + '!')
+                    else:
+                        print('You are ' + littlefinger + '!')
+                else:
+                    print('You are ' + tyrion_lannister + '!')
+        else:
+            compassionate = input('Do your friends often rely on you for advice? Do you prefer to listen and help others? ')
+            if compassionate == 'Yes':
+                protective = input('Do you often want to protect your friends and family? ')
+                if protective == 'Yes':
+                    print('You are ' + daenerys_targaryen + '!')
+                else:
+                    print('You are ' + arya_stark + '!')
+            else:
+                print('You are ' + the_hound + '!')
+
+    start = input("How'd we do? Do you think you might be a different character? ")
+
+    if start == 'No':
+        print('Great! Thanks for playing!')
+        break
+    else:
+        print('Let\'s try again!')
+print('Awww, too bad! Come back when you\'re ready!')
+
+```
+
+
+
+
